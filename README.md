@@ -51,7 +51,7 @@ await accountsAPI.loginAdminByEmailAndPassword(userCredentials);
 });
 
 /* 4.Step - Create users */
-const organisationUsers = await usersAPI.registerMultipleUsers(
+const organizationUsers = await usersAPI.registerMultipleUsers(
       Array.from({ length: 3 }, (_, i) => ({
         name: `E2E Test User ${i + 1}`,
         email: `e2eTestUser${i + 1}@example.com`,
@@ -61,7 +61,7 @@ const organisationUsers = await usersAPI.registerMultipleUsers(
 );
 
 /* 5.Step - Create groups */
-const organisationGroups = await Promise.all(
+const organizationGroups = await Promise.all(
       Array.from({ length: 3 }, (_, i) =>
         groupsAPI.registerGroup({
           name: `E2E Test Group ${i + 1}`,
@@ -74,8 +74,8 @@ const organisationGroups = await Promise.all(
 
 /* 6.Step - Add users to groups */
 const usersGroups = [];
-organisationGroups.forEach((group) => {
-  organisationUsers.forEach((user) => {
+organizationGroups.forEach((group) => {
+  organizationUsers.forEach((user) => {
     usersGroups.push({
       groupId: group.id,
       Id: user.id,
@@ -85,3 +85,11 @@ organisationGroups.forEach((group) => {
 
 await groupsAPI.addMultipleGroupMembers(usersGroups);
 ```
+
+## Example teardown for each E2E Test
+
+```shell
+ await organizationsAPI.forceDeleteOrganization(organization.id);
+ await accountsAPI.logout();
+```
+
