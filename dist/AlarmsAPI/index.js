@@ -1,4 +1,7 @@
-export class AlarmsAPI {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AlarmsAPI = void 0;
+class AlarmsAPI {
     constructor(apiService) {
         this.createEmergencyType = async (body) => {
             try {
@@ -60,4 +63,5 @@ export class AlarmsAPI {
         this.apiService = apiService;
     }
 }
+exports.AlarmsAPI = AlarmsAPI;
 //# sourceMappingURL=index.js.map

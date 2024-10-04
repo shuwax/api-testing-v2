@@ -1,4 +1,7 @@
-export class UsersAPI {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UsersAPI = void 0;
+class UsersAPI {
     constructor(apiService) {
         this.registerUser = async (body) => {
             try {
@@ -125,4 +128,5 @@ export class UsersAPI {
         this.apiService = apiService;
     }
 }
+exports.UsersAPI = UsersAPI;
 //# sourceMappingURL=index.js.map

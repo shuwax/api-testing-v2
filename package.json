@@ -1,7 +1,6 @@
 {
   "name": "@r-smolonskij/api-testing",
   "version": "1.0.2",
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": "https://github.com/r-smolonskij/api-testing",

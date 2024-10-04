@@ -1,7 +1,11 @@
-export const createError = (error, response) => {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getRequestHeaders = exports.createError = void 0;
+const createError = (error, response) => {
     console.log('createError', error, response);
 };
-export const getRequestHeaders = (csrfToken, cookies) => {
+exports.createError = createError;
+const getRequestHeaders = (csrfToken, cookies) => {
     return {
         'Content-Type': 'application/json',
         ...(!!csrfToken && { 'X-XSRF-TOKEN': csrfToken }),
@@ -10,6 +14,7 @@ export const getRequestHeaders = (csrfToken, cookies) => {
         }),
     };
 };
+exports.getRequestHeaders = getRequestHeaders;
 // .replace(`, coreAuth=`, '; coreAuth=')
 // getRequestHeaders(includeCsrfToken = true, includeCookies = true) {
 //     return {

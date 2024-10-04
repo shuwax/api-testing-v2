@@ -1,4 +1,7 @@
-export class GroupsAPI {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.GroupsAPI = void 0;
+class GroupsAPI {
     constructor(apiService) {
         this.setApiService = (apiService) => {
             this.apiService = apiService;
@@ -140,4 +143,5 @@ export class GroupsAPI {
         this.apiService = apiService;
     }
 }
+exports.GroupsAPI = GroupsAPI;
 //# sourceMappingURL=index.js.map

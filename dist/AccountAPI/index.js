@@ -1,4 +1,7 @@
-export class AccountAPI {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AccountAPI = void 0;
+class AccountAPI {
     constructor(apiService) {
         this.setApiService = (apiService) => {
             this.apiService = apiService;
@@ -95,4 +98,5 @@ export class AccountAPI {
         this.apiService = apiService;
     }
 }
+exports.AccountAPI = AccountAPI;
 //# sourceMappingURL=index.js.map

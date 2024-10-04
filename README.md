@@ -29,6 +29,7 @@ await accountsAPI.getAntiForgeryToken();
 ```
 
 ## Example setup for each E2E Test
+
 ```shell
 /* Assigning classes */
 const apiService = new ApiService(BASE_URL);
@@ -92,4 +93,3 @@ await groupsAPI.addMultipleGroupMembers(usersGroups);
  await organizationsAPI.forceDeleteOrganization(organization.id);
  await accountsAPI.logout();
 ```
-

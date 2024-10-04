@@ -1,7 +1,10 @@
-import { AlarmsAPI } from '../AlarmsAPI/index.js';
-import { GroupsAPI } from '../GroupsAPI/index.js';
-import { UsersAPI } from '../UsersAPI/index.js';
-export class OrganizationsAPI {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OrganizationsAPI = void 0;
+const index_js_1 = require("../AlarmsAPI/index.js");
+const index_js_2 = require("../GroupsAPI/index.js");
+const index_js_3 = require("../UsersAPI/index.js");
+class OrganizationsAPI {
     constructor(apiService) {
         this.setApiService = (apiService) => {
             this.apiService = apiService;
@@ -100,9 +103,9 @@ export class OrganizationsAPI {
          */
         this.forceDeleteOrganization = async (id) => {
             try {
-                const groupsAPI = new GroupsAPI(this.apiService);
-                const usersAPI = new UsersAPI(this.apiService);
-                const alarmsAPI = new AlarmsAPI(this.apiService);
+                const groupsAPI = new index_js_2.GroupsAPI(this.apiService);
+                const usersAPI = new index_js_3.UsersAPI(this.apiService);
+                const alarmsAPI = new index_js_1.AlarmsAPI(this.apiService);
                 const organizationGroups = await groupsAPI.getAdminPanelGroups({
                     OrgId: id,
                     IncludeSuborgs: true,
@@ -124,4 +127,5 @@ export class OrganizationsAPI {
         this.apiService = apiService;
     }
 }
+exports.OrganizationsAPI = OrganizationsAPI;
 //# sourceMappingURL=index.js.map

@@ -101,6 +101,7 @@ export class ApiService {
     });
     const csrfToken = () => this.csrfToken;
     const cookies = () => this.cookies;
+    // TODO: When response is 200 and it's empty should add parseAs: 'text'
     function addAuthorizationHeader<
       P extends PathsWithMethod<Paths, M>,
       M extends HttpMethod,
