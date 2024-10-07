@@ -3,12 +3,15 @@
   "version": "1.0.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": "https://github.com/r-smolonskij/api-testing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shuwax/api-testing-v2.git"
+  },
   "files": [
     "dist/**/*"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsup src/index.ts --format cjs,esm --dts",
     "start": "npm run format && npm run build && node dist/index.js",
     "test": "jest",
     "dev": "ts-node-dev src/e2e-setup.ts",
@@ -22,11 +25,13 @@
     "js-cookie": "^3.0.5",
     "openapi-fetch": "^0.12.2",
     "openapi-typescript-helpers": "^0.0.13",
-    "qs": "^6.13.0"
+    "qs": "^6.13.0",
+    "tsup": "^8.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",
     "@types/node": "^20.16.5",
+    "@types/qs": "^6.9.16",
     "eslint": "^9.11.1",
     "globals": "^15.9.0",
     "openapi-typescript": "^7.4.1",
